@@ -12,7 +12,7 @@ namespace DATLYR
         {
             //Extrae string de conexion a la base de datos
             string cn = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-            //string cn = Convert.ToString(ConfigurationManager.AppSettings);
+            //string cn = ConfigurationSettings.AppSettings("db1");
             return cn;
         }
     }
