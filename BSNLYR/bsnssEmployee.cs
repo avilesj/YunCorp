@@ -14,6 +14,7 @@ namespace BSNLYR
         public string emp_ext;
         public string emp_flota;
         public string dept_id;
+        public string emp_id;
 
         public DataTable ConsultarCliente(string emp_parametro, int tipo)
         {
@@ -34,7 +35,17 @@ namespace BSNLYR
             this.emp_ext = dtEmp.Rows[0]["Extension"].ToString();
             this.emp_flota = dtEmp.Rows[0]["Flota"].ToString();
             this.dept_id = dtEmp.Rows[0]["Departamento"].ToString();
+            this.emp_id = dtEmp.Rows[0]["Codigo"].ToString();
         }
 
+        public void guardarEmpleado(int emp_id, string emp_nombre, string emp_apellido,
+                                    string emp_cedula, string emp_extension, string emp_flota,
+                                    int dept_id)
+        {
+            DATLYR.dbEmployee objEmp = new DATLYR.dbEmployee();
+            objEmp.editarEmpleado(emp_id, emp_nombre, emp_apellido,
+                                    emp_cedula, emp_extension, emp_flota,
+                                    dept_id);
+        }
     }
 }

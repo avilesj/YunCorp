@@ -82,5 +82,55 @@ namespace DATLYR
             return dsCliente.Tables[0];
         }
 
+        public void editarEmpleado(int emp_id, string emp_nombre, string emp_apellido,
+                                    string emp_cedula, string emp_extension, string emp_flota,
+                                    int dept_id)
+        {
+            dbConnect ObjConexionDB = new dbConnect();
+            SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("spActEmpleado", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            if (String.IsNullOrEmpty(emp_nombre))
+            {
+                emp_nombre = "NULL";
+            }
+
+            if (String.IsNullOrEmpty(emp_apellido))
+            {
+                emp_apellido = "NULL";
+            }
+
+            if (String.IsNullOrEmpty(emp_cedula))
+            {
+                emp_cedula = "NULL";
+            }
+
+            if (String.IsNullOrEmpty(emp_extension))
+            {
+                emp_extension = "NULL";
+            }
+
+            if (String.IsNullOrEmpty(emp_flota))
+            {
+                emp_flota = "NULL";
+            }
+
+            cmd.Parameters.AddWithValue("@emp_nombre", emp_nombre);
+            cmd.Parameters.AddWithValue("@emp_apellido", emp_apellido);
+            cmd.Parameters.AddWithValue("@emp_cedula", emp_cedula);
+            cmd.Parameters.AddWithValue("@dept_id", dept_id);
+            cmd.Parameters.AddWithValue("@emp_ext", emp_extension);
+            cmd.Parameters.AddWithValue("@emp_flota", emp_flota);
+            cmd.Parameters.AddWithValue("@emp_id",emp_id);
+            cmd.ExecuteNonQuery();
+            
+            //Fin de multiples formas de consultar
+
+            SqlDataAdapter SqlDa = new SqlDataAdapter(cmd);
+            cn.Close();
+        }
+
     }
 }
