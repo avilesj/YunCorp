@@ -22,7 +22,7 @@
     <br />
     <br />
     EXTENSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
-    <asp:TextBox ID="txtExtension" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtExtension" runat="server" MaxLength="4"></asp:TextBox>
     <br />
     <br />
     FLOTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -40,4 +40,8 @@
     <asp:Button ID="guardar" runat="server" onclick="guardar_Click" 
         Text="Guardar" />
     <br />
+    <asp:RequiredFieldValidator ID="Value1RequiredValidator" ControlToValidate="txtExtension"
+             ErrorMessage="Favor no exceder 4 caracteres<br />" Display="Dynamic"
+             runat="server"/>
+    <script src="Scripts/controlCampos.js" type="text/javascript"></script>
 </asp:Content>

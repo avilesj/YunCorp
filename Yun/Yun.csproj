@@ -66,6 +66,7 @@
     <Content Include="NuevoEmp.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\controlCampos.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Styles\Site.css" />

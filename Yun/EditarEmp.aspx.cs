@@ -29,7 +29,6 @@ namespace Yun
 
         protected void guardar_Click(object sender, EventArgs e)
         {
-
             BSNLYR.bsnssEmployee emp = new BSNLYR.bsnssEmployee();
             emp.guardarEmpleado(int.Parse(lbCod.Text), txtNombre.Text, txtApellido.Text,
                                 txtCedula.Text, txtExtension.Text, txtFlota.Text,

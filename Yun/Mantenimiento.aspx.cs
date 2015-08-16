@@ -12,14 +12,58 @@ namespace Yun
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                DataTable dtTable = new DataTable();
+                BSNLYR.bsnssDDL emp = new BSNLYR.bsnssDDL();
+                dtTable = emp.obtenerDDL();
+                DropDownList1.DataSource = dtTable;
+                DropDownList1.DataTextField = "Parametros";
+                DropDownList1.DataValueField = "Parametros";
+                DropDownList1.DataBind();
+                DropDownList1.SelectedValue = "General";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            int parametro = 0;
+
+            if (DropDownList1.SelectedItem.Text == "Nombre")
+            {
+                parametro = 1;
+            }
+
+
+            if (DropDownList1.SelectedItem.Text == "Apellido")
+            {
+                parametro = 2;
+            }
+
+
+            if (DropDownList1.SelectedItem.Text == "Cedula")
+            {
+                parametro = 3;
+            }
+
+            if (DropDownList1.SelectedItem.Text == "Codigo Departamento")
+            {
+                parametro = 4;
+            }
+
+            if (DropDownList1.SelectedItem.Text == "Extension")
+            {
+                parametro = 5;
+            }
+
+            if (DropDownList1.SelectedItem.Text == "Flota")
+            {
+                parametro = 6;
+            }
+
            DataTable dtTable = new DataTable();
            BSNLYR.bsnssEmployee emp = new BSNLYR.bsnssEmployee();
-           dtTable = emp.ConsultarCliente(TextBox1.Text, 1);
+           dtTable = emp.ConsultarCliente(TextBox1.Text, parametro);
            GridView1.DataSource = dtTable;
            GridView1.DataBind();
         }
@@ -38,6 +82,7 @@ namespace Yun
         {
             Response.Redirect("NuevoEmp.aspx");
         }
+
 
     }
 }

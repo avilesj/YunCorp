@@ -24,7 +24,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@emp_nombre", "NULL");
+                cmd.Parameters.AddWithValue("@emp_nombre", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 2)
             {
@@ -32,7 +32,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@emp_apellido", "NULL");
+                cmd.Parameters.AddWithValue("@emp_apellido", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 3)
             {
@@ -40,7 +40,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@emp_cedula", "NULL");
+                cmd.Parameters.AddWithValue("@emp_cedula", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 4)
             {
@@ -48,7 +48,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@dept_id", "NULL");
+                cmd.Parameters.AddWithValue("@dept_id", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 5)
             {
@@ -56,7 +56,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@emp_ext", "NULL");
+                cmd.Parameters.AddWithValue("@emp_ext", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 6)
             {
@@ -64,7 +64,7 @@ namespace DATLYR
             }
             else
             {
-                cmd.Parameters.AddWithValue("@emp_flota", "NULL");
+                cmd.Parameters.AddWithValue("@emp_flota", System.Data.SqlTypes.SqlString.Null);
             }
             if (type == 7)
             {
