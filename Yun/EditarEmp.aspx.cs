@@ -42,6 +42,7 @@ namespace Yun
             emp.guardarEmpleado(int.Parse(lbCod.Text), txtNombre.Text, txtApellido.Text,
                                 txtCedula.Text, txtExtension.Text, txtFlota.Text,
                                 txtDept.SelectedIndex + 1);
+            Response.Redirect("Mantenimiento.aspx");
         }
 
         protected void eliminar_Click(object sender, EventArgs e)

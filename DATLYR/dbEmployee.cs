@@ -74,6 +74,17 @@ namespace DATLYR
             {
                 cmd.Parameters.AddWithValue("@emp_id", System.Data.SqlTypes.SqlInt32.Null);
             }
+
+            if (type == 8)
+            {
+                SqlCommand cmd2 = new SqlCommand("spConsultaEmpleadoGeneral", cn);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@parametro", emp_parameter);
+                SqlDataAdapter SqlDa2 = new SqlDataAdapter(cmd2);
+                SqlDa2.Fill(dsCliente);
+                cn.Close();
+                return dsCliente.Tables[0];
+            }
             //Fin de multiples formas de consultar
 
             SqlDataAdapter SqlDa = new SqlDataAdapter(cmd);
@@ -94,35 +105,51 @@ namespace DATLYR
 
             if (String.IsNullOrEmpty(emp_nombre))
             {
-                emp_nombre = "NULL";
+                cmd.Parameters.AddWithValue("@emp_nombre", System.Data.SqlTypes.SqlString.Null);
+            }
+
+            else
+            {
+                cmd.Parameters.AddWithValue("@emp_nombre", emp_nombre);
             }
 
             if (String.IsNullOrEmpty(emp_apellido))
             {
-                emp_apellido = "NULL";
+                cmd.Parameters.AddWithValue("@emp_apellido", System.Data.SqlTypes.SqlString.Null);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@emp_apellido", emp_apellido);
             }
 
             if (String.IsNullOrEmpty(emp_cedula))
             {
-                emp_cedula = "NULL";
+                cmd.Parameters.AddWithValue("@emp_cedula", System.Data.SqlTypes.SqlString.Null);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@emp_cedula", emp_cedula);
             }
 
             if (String.IsNullOrEmpty(emp_extension))
             {
-                emp_extension = "NULL";
+                cmd.Parameters.AddWithValue("@emp_ext", System.Data.SqlTypes.SqlString.Null);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@emp_ext", emp_extension);
             }
 
             if (String.IsNullOrEmpty(emp_flota))
             {
-                emp_flota = "NULL";
+                cmd.Parameters.AddWithValue("@emp_flota", System.Data.SqlTypes.SqlString.Null);
+            }
+            else
+            {
+                  cmd.Parameters.AddWithValue("@emp_flota", emp_flota);
             }
 
-            cmd.Parameters.AddWithValue("@emp_nombre", emp_nombre);
-            cmd.Parameters.AddWithValue("@emp_apellido", emp_apellido);
-            cmd.Parameters.AddWithValue("@emp_cedula", emp_cedula);
             cmd.Parameters.AddWithValue("@dept_id", dept_id);
-            cmd.Parameters.AddWithValue("@emp_ext", emp_extension);
-            cmd.Parameters.AddWithValue("@emp_flota", emp_flota);
             cmd.Parameters.AddWithValue("@emp_id",emp_id);
             cmd.ExecuteNonQuery();
             

@@ -60,7 +60,10 @@ namespace Yun
             {
                 parametro = 6;
             }
-
+            if (DropDownList1.SelectedItem.Text == "General")
+            {
+                parametro = 8;
+            }
            DataTable dtTable = new DataTable();
            BSNLYR.bsnssEmployee emp = new BSNLYR.bsnssEmployee();
            dtTable = emp.ConsultarCliente(TextBox1.Text, parametro);
@@ -81,6 +84,11 @@ namespace Yun
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("NuevoEmp.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Departamentos.aspx");
         }
 
 

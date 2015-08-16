@@ -60,9 +60,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\logo-nav.css" />
+    <Content Include="Departamentos.aspx" />
+    <Content Include="EditarDept.aspx" />
     <Content Include="EditarEmp.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Mantenimiento.aspx" />
+    <Content Include="NuevoDept.aspx" />
     <Content Include="NuevoEmp.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -133,6 +136,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Departamentos.aspx.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departamentos.aspx.designer.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarDept.aspx.cs">
+      <DependentUpon>EditarDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarDept.aspx.designer.cs">
+      <DependentUpon>EditarDept.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarEmp.aspx.cs">
       <DependentUpon>EditarEmp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +166,13 @@
     </Compile>
     <Compile Include="Mantenimiento.aspx.designer.cs">
       <DependentUpon>Mantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoDept.aspx.cs">
+      <DependentUpon>NuevoDept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoDept.aspx.designer.cs">
+      <DependentUpon>NuevoDept.aspx</DependentUpon>
     </Compile>
     <Compile Include="NuevoEmp.aspx.cs">
       <DependentUpon>NuevoEmp.aspx</DependentUpon>
