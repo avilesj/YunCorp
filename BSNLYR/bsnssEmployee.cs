@@ -47,5 +47,21 @@ namespace BSNLYR
                                     emp_cedula, emp_extension, emp_flota,
                                     dept_id);
         }
+
+        public void eliminarEmpleado(int emp_id)
+        {
+            DATLYR.dbEmployee objEmp = new DATLYR.dbEmployee();
+            objEmp.eliminarEmpleado(emp_id);
+        }
+
+        public void registrarEmpleado(string emp_nombre, string emp_apellido,
+                                    string emp_cedula, string emp_extension, string emp_flota,
+                                    int dept_id)
+        {
+            DATLYR.dbEmployee objEmp = new DATLYR.dbEmployee();
+            objEmp.crearEmpleado(emp_nombre, emp_apellido,
+                                    emp_cedula, emp_extension, emp_flota,
+                                    dept_id);
+        }
     }
 }

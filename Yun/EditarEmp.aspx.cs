@@ -10,6 +10,7 @@ namespace Yun
 {
     public partial class EditarEmp : System.Web.UI.Page
     {
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -28,13 +29,23 @@ namespace Yun
 
         protected void guardar_Click(object sender, EventArgs e)
         {
-         //   txtNombre.Text = int.Parse(lbCod.Text).ToString();
-         //   txtApellido.Text = int.Parse(txtDept.Text).ToString();
 
             BSNLYR.bsnssEmployee emp = new BSNLYR.bsnssEmployee();
             emp.guardarEmpleado(int.Parse(lbCod.Text), txtNombre.Text, txtApellido.Text,
                                 txtCedula.Text, txtExtension.Text, txtFlota.Text,
                                 1);
+        }
+
+        protected void eliminar_Click(object sender, EventArgs e)
+        {
+            BSNLYR.bsnssEmployee emp = new BSNLYR.bsnssEmployee();
+            emp.eliminarEmpleado(int.Parse(lbCod.Text));
+            Response.Redirect("Mantenimiento.aspx");
+        }
+
+        protected void cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Mantenimiento.aspx");
         }
     }
 }

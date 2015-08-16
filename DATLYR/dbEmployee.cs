@@ -132,5 +132,36 @@ namespace DATLYR
             cn.Close();
         }
 
+        public void eliminarEmpleado(int emp_id)
+        {
+            dbConnect ObjConexionDB = new dbConnect();
+            DataSet dsCliente = new DataSet();
+            SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("spEliminarEmpleado", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@emp_id", emp_id);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void crearEmpleado(string emp_nombre, string emp_apellido,
+                                    string emp_cedula, string emp_extension, string emp_flota,
+                                    int dept_id)
+        {
+            dbConnect ObjConexionDB = new dbConnect();
+            DataSet dsCliente = new DataSet();
+            SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("spNuevoEmpleado", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@emp_nombre", emp_nombre);
+            cmd.Parameters.AddWithValue("@emp_apellido", emp_apellido);
+            cmd.Parameters.AddWithValue("@emp_cedula", emp_cedula);
+            cmd.Parameters.AddWithValue("@dept_id", dept_id);
+            cmd.Parameters.AddWithValue("@emp_ext", emp_extension);
+            cmd.Parameters.AddWithValue("@emp_flota", emp_flota);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }
