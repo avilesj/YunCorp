@@ -29,7 +29,8 @@
     <asp:TextBox ID="txtFlota" runat="server"></asp:TextBox>
     <br />
     <br />
-    DEPARTAMENTO<asp:TextBox ID="txtDept" runat="server" style="text-align: center"></asp:TextBox>
+    DEPARTAMENTO<asp:DropDownList ID="txtDept" runat="server">
+    </asp:DropDownList>
     <br />
     <br />
     <br />

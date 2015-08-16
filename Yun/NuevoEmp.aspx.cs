@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BSNLYR;
+using System.Data;
 
 namespace Yun
 {
@@ -12,7 +13,13 @@ namespace Yun
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataTable dtTable = new DataTable();
+            BSNLYR.bsnssDept emp2 = new BSNLYR.bsnssDept();
+            dtTable = emp2.consultarDept();
+            txtDept.DataSource = dtTable;
+            txtDept.DataTextField = "Departamentos";
+            txtDept.DataValueField = "Departamentos";
+            txtDept.DataBind();
         }
 
         protected void guardar_Click(object sender, EventArgs e)
@@ -20,7 +27,7 @@ namespace Yun
             bsnssEmployee emp = new bsnssEmployee();
             emp.registrarEmpleado(txtNombre.Text, txtApellido.Text,
                                 txtCedula.Text, txtExtension.Text, txtFlota.Text,
-                                1);
+                                txtDept.SelectedIndex + 1);
             Response.Redirect("Mantenimiento.aspx");
         }
 
