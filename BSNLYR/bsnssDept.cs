@@ -11,6 +11,7 @@ namespace BSNLYR
         public string dept_nombre;
         public string dept_gerente;
         public string dept_id;
+        public string dept_gerente_id;
 
         public DataTable consultarDept()
         {
@@ -33,15 +34,27 @@ namespace BSNLYR
             DataTable dtTable = new DataTable();
             DATLYR.dbDept objDept = new DATLYR.dbDept();
             dtTable = objDept.consultaID(dept_id);
-            this.dept_id = dtTable.Rows[0]["Codigo"].ToString();
+            this.dept_id = dtTable.Rows[0]["DeptCod"].ToString();
             this.dept_gerente = dtTable.Rows[0]["Gerente"].ToString();
             this.dept_nombre = dtTable.Rows[0]["Departamento"].ToString();
-
+            this.dept_gerente_id = dtTable.Rows[0]["Codigo"].ToString();
         }
-        public void actualizarDept(int dept_id, string dept_desc)
+        public void actualizarDept(int dept_id, string dept_desc, int emp_id)
         {
             DATLYR.dbDept objDept = new DATLYR.dbDept();
-            objDept.editarDept(dept_id, dept_desc);
+            objDept.editarDept(dept_id, dept_desc, emp_id);
+        }
+
+        public void registrarDept(string dept_desc, int emp_id)
+        {
+            DATLYR.dbDept objDept = new DATLYR.dbDept();
+            objDept.nuevoDept(dept_desc, emp_id);
+        }
+
+        public void eliminarDept(int dept_id)
+        {
+            DATLYR.dbDept objDept = new DATLYR.dbDept();
+            objDept.borrarDept(dept_id);
         }
     }
 }

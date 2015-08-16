@@ -18,5 +18,12 @@ namespace Yun
         {
             Response.Redirect("Departamentos.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            BSNLYR.bsnssDept emp = new BSNLYR.bsnssDept();
+            emp.registrarDept(TextBox1.Text, int.Parse(TextBox2.Text));
+            Response.Redirect("Departamentos.aspx");
+        }
     }
 }

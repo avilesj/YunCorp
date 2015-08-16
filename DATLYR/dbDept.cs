@@ -52,16 +52,41 @@ namespace DATLYR
             return dsDept.Tables[0];
         }
 
-        public void editarDept(int dept_id, string dept_desc)
+        public void editarDept(int dept_id, string dept_desc, int emp_id)
         {
             dbConnect ObjConexionDB = new dbConnect();
-            DataSet dsDept = new DataSet();
             SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
             cn.Open();
             SqlCommand cmd = new SqlCommand("spActDept", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@dept_id", dept_id);
             cmd.Parameters.AddWithValue("@dept_desc", dept_desc);
+            cmd.Parameters.AddWithValue("@emp_id", emp_id);
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void nuevoDept(string dept_desc, int emp_id)
+        {
+            dbConnect ObjConexionDB = new dbConnect();
+            SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("spNuevoDepartamento", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@emp_id", emp_id);
+            cmd.Parameters.AddWithValue("@dept_desc", dept_desc);
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void borrarDept(int dept_id)
+        {
+            dbConnect ObjConexionDB = new dbConnect();
+            SqlConnection cn = new SqlConnection(ObjConexionDB.connect());
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("spEliminarDepartamento", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@dept_id", dept_id);
             cmd.ExecuteNonQuery();
             cn.Close();
         }
