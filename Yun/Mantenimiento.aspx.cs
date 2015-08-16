@@ -30,7 +30,7 @@ namespace Yun
 
             if (e.CommandName.CompareTo("selectEmp") == 0)
             {
-                Server.Transfer("EditarEmp.aspx?id="+ GridView1.Rows[indice].Cells[1].Text);
+                Response.Redirect("EditarEmp.aspx?id="+ GridView1.Rows[indice].Cells[1].Text);
             }
         }
 

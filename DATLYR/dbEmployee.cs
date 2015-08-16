@@ -9,13 +9,6 @@ namespace DATLYR
 {
     public class dbEmployee
     {
-        public string emp_nombre;
-        public string emp_apellido;
-        public string emp_cedula;
-        public string emp_ext;
-        public string emp_flota;
-        public string dept_id;
-
         public DataTable ConsultarEmpleado(string emp_parameter, int type)
         {
             dbConnect ObjConexionDB = new dbConnect();
@@ -75,7 +68,11 @@ namespace DATLYR
             }
             if (type == 7)
             {
-                cmd.Parameters.AddWithValue("@emp_codigo", emp_parameter);
+                cmd.Parameters.AddWithValue("@emp_id", Convert.ToInt32(emp_parameter));
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@emp_id", System.Data.SqlTypes.SqlInt32.Null);
             }
             //Fin de multiples formas de consultar
 

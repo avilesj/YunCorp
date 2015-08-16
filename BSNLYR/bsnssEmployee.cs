@@ -29,6 +29,11 @@ namespace BSNLYR
             DATLYR.dbEmployee objEmp = new DATLYR.dbEmployee();
             dtEmp = objEmp.ConsultarEmpleado(emp_parametro, tipo);
             this.emp_nombre = dtEmp.Rows[0]["Nombre"].ToString();
+            this.emp_apellido = dtEmp.Rows[0]["Apellido"].ToString();
+            this.emp_cedula = dtEmp.Rows[0]["Cedula"].ToString();
+            this.emp_ext = dtEmp.Rows[0]["Extension"].ToString();
+            this.emp_flota = dtEmp.Rows[0]["Flota"].ToString();
+            this.dept_id = dtEmp.Rows[0]["Departamento"].ToString();
         }
 
     }
