@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Yun
 {
-    public partial class Site : System.Web.UI.MasterPage
+    public partial class EditarEmp : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

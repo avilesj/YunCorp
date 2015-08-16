@@ -6,3 +6,6 @@ C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\bin\Debug\BSNLYR.dll
 C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\bin\Debug\BSNLYR.pdb
 C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\obj\Debug\BSNLYR.dll
 C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\obj\Debug\BSNLYR.pdb
+C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\obj\Debug\BSNLYR.csprojResolveAssemblyReference.cache
+C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\bin\Debug\DATLYR.dll
+C:\Users\Joe\Documents\GitHub\YunCorp\BSNLYR\bin\Debug\DATLYR.pdb

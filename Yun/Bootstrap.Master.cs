@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Yun
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Bootstrap : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
