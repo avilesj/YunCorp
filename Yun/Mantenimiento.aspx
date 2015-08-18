@@ -23,4 +23,6 @@
                 CommandName="selectEmp" Text="Button" />
         </Columns>
     </asp:GridView>
+    <asp:Button ID="Button4" runat="server" onclick="Button4_Click" 
+        Text="Reporte" />
 </asp:Content>

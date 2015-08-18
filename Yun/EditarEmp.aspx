@@ -42,7 +42,7 @@
         Text="Guardar" />
     <br />
     <asp:RequiredFieldValidator ID="Value1RequiredValidator" ControlToValidate="txtExtension"
-             ErrorMessage="Favor no exceder 4 caracteres<br />" Display="Dynamic"
+             ErrorMessage="El limite de la extension son 4 caracteres<br />" Display="Dynamic"
              runat="server"/>
     <script src="Scripts/controlCampos.js" type="text/javascript"></script>
 </asp:Content>
